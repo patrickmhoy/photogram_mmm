@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :newsfeed,
+             :through => :following,
+             :source => :photos
+
   has_many   :followers,
              :through => :rec_requests,
              :source => :sender
